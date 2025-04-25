@@ -4,19 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ocean Auto Detailing</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Header -->
   <header>
     <h1>Ocean Auto Detailing</h1>
-    <!-- Navigation menu -->
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h2>Your Car Deserves the Best</h2>
+    <p>Professional Auto Detailing Services in Rowlett, Texas</p>
+    <a href="#contact" class="btn">Book Now</a>
+  </section>
 
   <!-- About Us -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Welcome to Ocean Auto Detailing...</p>
+    <p>At Ocean Auto Detailing, we provide top-notch detailing services to make your vehicle shine like new.</p>
   </section>
 
   <!-- Services -->
@@ -24,21 +40,27 @@
     <h2>Our Services</h2>
     <ul>
       <li>Exterior Wash</li>
-      <li>Interior Detail</li>
-      <!-- Add more services -->
+      <li>Interior Detailing</li>
+      <li>Engine Cleaning</li>
+      <li>Wax & Polish</li>
     </ul>
   </section>
 
   <!-- Gallery -->
   <section id="gallery">
     <h2>Gallery</h2>
-    <!-- Image gallery -->
+    <!-- Add your images here -->
+    <img src="images/gallery1.jpg" alt="Car detailing example 1">
+    <img src="images/gallery2.jpg" alt="Car detailing example 2">
   </section>
 
   <!-- Testimonials -->
   <section id="testimonials">
     <h2>Testimonials</h2>
-    <!-- Customer testimonials -->
+    <blockquote>
+      <p>"Ocean Auto Detailing did an amazing job on my car! Highly recommend."</p>
+      <cite>- Happy Customer</cite>
+    </blockquote>
   </section>
 
   <!-- Contact & Booking -->
@@ -55,3 +77,103 @@
   </footer>
 </body>
 </html>
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header styling */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero section */
+#hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+#hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e8491d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Gallery images */
+#gallery img {
+  width: 45%;
+  margin: 2.5%;
+  border-radius: 5px;
+}
+
+/* Testimonials */
+blockquote {
+  font-style: italic;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
