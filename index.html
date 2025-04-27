@@ -1,101 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ocean Auto Detailing - Mobile Car Detailing in Dallas, TX</title>
   <meta name="description" content="Ocean Auto Detailing brings professional car detailing services directly to your doorstep in Dallas, TX. Interior, exterior, and full car detailing. Book your appointment today!">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Your CSS starts here... */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f0f8ff;
-      color: #003366;
-    }
-    header, footer {
-      background-color: #0077b6;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      background-color: #023e8a;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-#hero {
-  position: relative;
-  background: url('banner.jpg') no-repeat center center/cover;
-  height: 100vh; /* Full screen height */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-#hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
-  z-index: 1;
-}
-
-#hero h2, #hero p {
-  position: relative;
-  z-index: 2;
-}
-
-}
-    }
-    section {
-      padding: 2rem;
-    }
-    .services-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .service {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    iframe {
-      width: 100%;
-      height: 1650px;
-      border: none;
-    }
-    footer {
-      margin-top: 2rem;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f0f8ff; color: #003366; }
+    header, footer { background-color: #0077b6; color: white; padding: 1rem; text-align: center; }
+    nav { background-color: #023e8a; display: flex; justify-content: center; gap: 2rem; padding: 0.5rem; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    #hero { position: relative; background: url('banner.jpg') no-repeat center center/cover; height: 100vh; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    #hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1; }
+    #hero h2, #hero p, #hero a { position: relative; z-index: 2; }
+    section { padding: 2rem; }
+    .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .service { background-color: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    iframe { width: 100%; height: 1650px; border: none; }
     @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      .services-list {
-        grid-template-columns: 1fr;
-      }
+      nav { flex-direction: column; align-items: center; }
+      .services-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -103,45 +28,44 @@
   <header>
     <h1>Ocean Auto Detailing</h1>
     <p>Premium Mobile Car Detailing in Dallas, TX</p>
-  </header>
-  <nav>
+  </header>  <nav>
     <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
-  </nav>
-  <section id="hero">
+  </nav>  <section id="hero">
     <h2>Your Car Deserves the Best</h2>
     <p>Professional Auto Detailing Services Delivered to You</p>
     <div style="margin-top:20px;">
-  <a href="#contact" style="background-color:#0077b6; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; font-weight:bold;">Book Now</a>
+      <a href="#contact" style="background-color:#0077b6; color:white; padding:10px 20px; text-decoration:none; border-radius:5px; font-weight:bold;">Book Now</a>
     </div>
-  </section>
-  <section id="about">
+  </section>  <section id="about">
     <h2>About Us</h2>
-<p>At Ocean Auto Detailing, we redefine vehicle care with premium mobile detailing services. Our team is committed to restoring and protecting your car's beauty with industry-leading techniques and products — delivered conveniently to your doorstep in Dallas, TX and surrounding areas.</p>
-  </section>
-  <h2>Our Services</h2>
-<div class="services-list">
-  <div class="service">
-    <h3>Exterior Wash & Shine</h3>
-    <p>Meticulous hand wash, professional wax, and premium tire shine for an unbeatable showroom glow.</p>
-  </div>
-  <div class="service">
-    <h3>Interior Deep Clean</h3>
-    <p>Comprehensive interior detailing including vacuuming, carpet shampooing, leather treatment.</p>
-  </div>
-  <div class="service">
-    <h3>Full Car Detailing</h3>
-    <p>Our complete signature service — exterior + interior deep detail, ceramic protection available.</p>
-  </div>
-</div>
-  </section>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?embedded=true" width="100%" height="1650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  <p><a href="https://maps.app.goo.gl/rytnApbJ5U6HFc8L6" target="_blank">View us on Google Maps</a></p>
-</section>
-  <footer>
-  <p>© 2025 Ocean Auto Detailing. All Rights Reserved.<br> Serving Dallas, TX and Surrounding Areas.</p>
-</footer>
+    <p>At Ocean Auto Detailing, we redefine vehicle care with premium mobile detailing services. Our team is committed to restoring and protecting your car's beauty with industry-leading techniques and products — delivered conveniently to your doorstep in Dallas, TX and surrounding areas.</p>
+  </section>  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-list">
+      <div class="service">
+        <h3>Exterior Wash & Shine</h3>
+        <p>Meticulous hand wash, professional wax, and premium tire shine for an unbeatable showroom glow.</p>
+      </div>
+      <div class="service">
+        <h3>Interior Deep Clean</h3>
+        <p>Comprehensive interior detailing including vacuuming, carpet shampooing, leather treatment, and odor removal.</p>
+      </div>
+      <div class="service">
+        <h3>Full Car Detailing</h3>
+        <p>Our complete signature service — exterior + interior deep detail, ceramic protection available.</p>
+      </div>
+    </div>
+  </section>  <section id="contact">
+    <h2>Contact & Booking</h2>
+    <p>Fill out the form and we'll get back to you shortly!</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?embedded=true" width="100%" height="1650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <p style="margin-top:1rem;">Or call us directly: <a href="tel:+12142519820">+1 214 251 9820</a></p>
+    <p><a href="https://maps.app.goo.gl/rytnApbJ5U6HFc8L6" target="_blank">View us on Google Maps</a></p>
+  </section>  <footer>
+    <p>© 2025 Ocean Auto Detailing. All Rights Reserved.<br>Serving Dallas, TX and Surrounding Areas.</p>
+  </footer>
 </body>
 </html>
