@@ -22,7 +22,43 @@
       nav { flex-direction: column; align-items: center; }
       .services-list { grid-template-columns: 1fr; }
     }
-  </style>
+<style>
+  #packages {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  #packages h2 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 2rem;
+  }
+
+  .package {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s;
+  }
+
+  .package:hover {
+    transform: scale(1.02);
+  }
+
+  .package h3 {
+    color: #0077b6;
+    margin-bottom: 0.5rem;
+  }
+
+  .package p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+</style>
 </head>
 <body>
   <header>
@@ -58,6 +94,40 @@
         <p>Our complete signature service — exterior + interior deep detail, ceramic protection available.</p>
       </div>
     </div>
+
+    <section id="packages">
+  <h2>Our Packages</h2>
+
+  <div class="package">
+    <h3>Express Exterior Wash - <span style="color: #0077b6;">Starting at $50</span></h3>
+    <p>Hand wash, wax, tire shine, light vacuum, and quick interior wipe-down.</p>
+  </div>
+
+  <div class="package">
+    <h3>Interior Deep Cleaning - <span style="color: #0077b6;">Starting at $120</span></h3>
+    <p>Full vacuum, shampoo carpets and seats, surface wipe-down, and interior conditioning.</p>
+  </div>
+
+  <div class="package">
+    <h3>Full Detail - <span style="color: #0077b6;">Starting at $180</span></h3>
+    <p>Complete inside and outside detailing, including engine bay cleaning and optional wax upgrade.</p>
+  </div>
+
+  <div class="package">
+    <h3>Paint Polishing (Single Stage) - <span style="color: #0077b6;">Starting at $250</span></h3>
+    <p>Machine polish to remove light scratches, swirls, and restore shine to your paintwork.</p>
+  </div>
+
+  <div class="package">
+    <h3>Ceramic Coating Application - <span style="color: #0077b6;">Starting at $500</span></h3>
+    <p>Professional ceramic coating service offering 2-year protection against water, dirt, and UV rays.</p>
+  </div>
+
+  <div class="package">
+    <h3>Headlight Restoration - <span style="color: #0077b6;">$60 per Pair</span></h3>
+    <p>Headlights sanded, polished, and protected to restore clarity and improve night driving visibility.</p>
+  </div>
+    </section>
   </section>  <section id="contact">
     <h2>Contact & Booking</h2>
     <p>Fill out the form and we'll get back to you shortly!</p>
