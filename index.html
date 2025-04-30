@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- SEO Meta Tags -->
+<title>Ocean Auto Detailing | Dallas Mobile Car Detailing</title>
+<meta name="description" content="Professional mobile car detailing in Dallas. Book full service detailing, interior shampoo, and exterior waxing. Call (214) 251-9820.">
+<meta name="keywords" content="car detailing, Dallas detailing, mobile car wash, ceramic coating, car wax, interior cleaning, Ocean Auto Detailing">
+<meta name="author" content="Ocean Auto Detailing">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Analytics (replace G-XXXXXXXXXX with your actual ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- AOS Animation CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Swiper Slider CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ocean Auto Detailing</title>
@@ -286,5 +306,22 @@
       pagination: { el: '.swiper-pagination' },
     });
   </script>
-</body>
+<!-- AOS Animation Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- Swiper Slider Script -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: { delay: 3000 },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
 </html>
