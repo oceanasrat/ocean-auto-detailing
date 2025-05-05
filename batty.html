@@ -1,81 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Chat with Batty - Your AI Assistant</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e9f8fc;
-      padding: 20px;
-    }
-    .chat-container {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      max-width: 500px;
-      margin: auto;
-    }
-    .messages {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 10px;
-      height: 250px;
-      overflow-y: auto;
-      background-color: #f9f9f9;
-    }
-    input[type="text"] {
-      width: 80%;
-      padding: 8px;
-      margin-top: 10px;
-    }
-    button {
-      padding: 8px 16px;
-    }
+    body { font-family: Arial; background-color: #e6f8fc; padding: 20px; }
+    #response { width: 100%; height: 300px; margin-bottom: 10px; }
+    input[type="text"] { width: 80%; padding: 10px; }
+    button { padding: 10px 20px; }
   </style>
 </head>
 <body>
-  <div class="chat-container">
-    <h2>Chat with Batty - Your AI Assistant</h2>
-    <div class="messages" id="messages">
-      <div><strong>Batty:</strong> Hi! I'm Batty. How can I help you today?</div>
-    </div>
-    <input type="text" id="userInput" placeholder="Type your message..." />
-    <button onclick="sendMessage()">Send</button>
-  </div>
+  <h2>Chat with Batty - Your AI Assistant</h2>
+  <textarea id="response" readonly>Hi! I'm Batty. How can I help you today?</textarea><br>
+  <input type="text" id="user-input" placeholder="Type your message..." />
+  <button onclick="sendMessage()">Send</button>
 
-  <script src="config.js"></script>
   <script>
     async function sendMessage() {
-      const input = document.getElementById("userInput");
+      const input = document.getElementById("user-input");
+      const output = document.getElementById("response");
+
       const message = input.value.trim();
       if (!message) return;
 
-      const messages = document.getElementById("messages");
-      messages.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+      output.value += `\nYou: ${message}`;
       input.value = "";
 
       try {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        const res = await fetch("/api/batty", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + OPENAI_API_KEY
-          },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: message }]
-          })
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
         });
 
-        const data = await response.json();
-        const reply = data.choices?.[0]?.message?.content || "Sorry, something went wrong.";
-        messages.innerHTML += `<div><strong>Batty:</strong> ${reply}</div>`;
-        messages.scrollTop = messages.scrollHeight;
-      } catch (error) {
-        messages.innerHTML += `<div><strong>Batty:</strong> Sorry, something went wrong.</div>`;
+        const data = await res.json();
+        output.value += `\nBatty: ${data.reply || "Sorry, something went wrong."}`;
+      } catch (err) {
+        output.value += "\nBatty: Sorry, something went wrong.";
       }
     }
   </script>
