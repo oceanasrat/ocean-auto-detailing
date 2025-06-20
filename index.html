@@ -221,10 +221,10 @@
         // --- Gemini API Call Function ---
         async function callGemini(prompt) {
             // PASTE YOUR API KEY IN THE LINE BELOW
-            const apiKey = "AIzaSyDBw-fsZQgDdotbDMFc1sZ2erxBWLh07-E"; 
+            const apiKey = "YOUR_API_KEY_GOES_HERE"; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             
-            if (apiKey === "YOUR_API_KEY_GOES_HERE") {
+            if (apiKey === "AIzaSyBVeHzpKPYFbzO7Q85-4X-XlDS4msnbWQ8") {
                 const recommendationOutput = document.getElementById('recommendation-output');
                 const carTipOutput = document.getElementById('car-tip-output');
                 const outputElement = recommendationOutput.classList.contains('hidden') ? carTipOutput : recommendationOutput;
