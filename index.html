@@ -1,265 +1,353 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <title>Ocean Auto Detailing | Mobile Car Detailing in Dallas, TX</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ocean Auto Detailing offers full-service mobile car detailing in Dallas including interior deep cleaning, waxing, ceramic coating & more. Book today!" />
-  <meta name="keywords" content="car detailing Dallas, mobile car wash, interior detailing, ceramic coating, auto detailing Texas" />
-  <meta name="author" content="Ocean Auto Detailing" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2N78FQMPLL">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2N78FQMPLL');
-</script>
-</script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f0f8ff;
-      margin: 0;
-      padding: 0;
-      color: #003366;
-    }
-    header, footer {
-      background-color: #0077b6;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    nav {
-      background-color: #023e8a;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem;
-    }
-    #hero {
-      background: url('banner.jpg') no-repeat center center/cover;
-      text-align: center;
-      color: white;
-      padding: 6rem 2rem;
-      position: relative;
-    }
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-    #hero h1, #hero h2, #hero p {
-      position: relative;
-      z-index: 1;
-    }
-    .services-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .service {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .service:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-.swiper-slide img {
-  width: 600%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-/* Mobile responsive tweak */
-@media (max-width: 600px) {
-  .swiper {
-    height: 200px;
-  }
-}
-
-    }
-    #reviews {
-      background-color: #f0f8ff;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-    #reviews h2 {
-      text-align: center;
-      color: #003366;
-    }
-    #reviews p {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1rem;
-      color: #444;
-}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Auto Detailing - Expert Car Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/2d3748/ffffff?text=Sleek+Car');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Simple spinner for loading states */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Ocean Auto Detailing</h1>
-    <p>Premium Mobile Detailing in Dallas, TX</p>
-  </header>
+<body class="bg-gray-100 text-gray-800">
 
-  <nav>
-    <a href="batty.html" target="_blank">Chat with Batty</a>
-    <a href="#hero">Home</a>
-    <a href="#services">Services</a>
-    <a href="#packages">Packages</a>
-    <a href="#contact">Contact</a>
-     <a href="#about">About</a>
-    <a href="#reviews">Reviews</a>
-  </nav>
+    <!-- Header & Navigation -->
+    <header id="home" class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#home" class="flex items-center space-x-2">
+                <i class="fas fa-water text-2xl text-blue-400"></i>
+                <h1 class="text-2xl font-bold tracking-tight">Ocean Auto Detailing</h1>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#recommender" class="hover:text-blue-400 transition duration-300">AI Advisor</a>
+                <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
+                <a href="#gallery" class="hover:text-blue-400 transition duration-300">Gallery</a>
+                <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
+            </nav>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="hidden md:inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Book Now</a>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#recommender" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">AI Advisor</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Services</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Gallery</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Contact</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="block w-full text-left mt-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 rounded-lg transition duration-300">Book Now</a>
+            </nav>
+        </div>
+    </header>
 
-  <section id="hero" data-aos="fade-up">
-    <h1>Professional Mobile Car Detailing in Dallas, TX</h1>
-    <h2>Your Car Deserves the Best</h2>
-    <p>Professional Auto Detailing Delivered to Your Doorstep</p>
-    <img src="banner.jpg" alt="Red sports car with glossy detailing finish" style="display:none;" />
-  </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section text-white h-[60vh] md:h-[80vh] flex items-center justify-center text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-wider">Unleash Your Car's Shine</h2>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">From showroom shine to deep interior cleaning, we provide meticulous detailing services that restore your vehicle's beauty and protect its value.</p>
+                <a href="#services" class="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">View Our Packages</a>
+            </div>
+        </section>
 
-  <section id="services" data-aos="fade-up">
-    <h2>Our Services</h2>
-    <div class="services-list">
-      <div class="service"><h3>Exterior Wash</h3><p>Gentle hand wash, wax, and tire shine.</p></div>
-      <div class="service"><h3>Interior Detailing</h3><p>Deep vacuuming, shampooing, and conditioning.</p></div>
-      <div class="service"><h3>Full Detail</h3><p>Complete inside-out detail with ceramic upgrade available.</p></div>
-    </div>
-  </section>
+        <!-- Gemini Feature: Service Recommender -->
+        <section id="recommender" class="py-20 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold text-gray-900">Not Sure What You Need?</h2>
+                <p class="text-gray-600 mt-2 mb-8 max-w-2xl mx-auto">Describe your car's condition and your goals, and let our AI advisor recommend the perfect service for you.</p>
+                <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label for="car-condition" class="block text-left text-lg font-medium text-gray-800 mb-2">Describe your car's situation:</label>
+                        <textarea id="car-condition" rows="4" class="w-full p-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 'My SUV is full of dog hair and the paint looks dull. I want it to look great for a family road trip.'"></textarea>
+                    </div>
+                    <button id="get-recommendation-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center space-x-2">
+                        <span>✨ Get AI Recommendation</span>
+                    </button>
+                    <div id="recommendation-output" class="mt-6 text-left p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500 hidden">
+                        <!-- AI content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="packages" data-aos="fade-up">
-    <h2>Our Packages</h2>
-    <div class="services-list">
-      <div class="service"><h3>Express Exterior Wash</h3><p>Starting at $50</p></div>
-      <div class="service"><h3>Interior Deep Cleaning</h3><p>Starting at $120</p></div>
-      <div class="service"><h3>Full Detail (Inside + Out)</h3><p>Starting at $180</p></div>
-      <div class="service"><h3>Ceramic Coating</h3><p>Starting at $500</p></div>
-    </div>
-  </section>
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Our Detailing Services</h2>
+                    <p class="text-gray-600 mt-2">Choose the perfect package to fit your needs.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Cards -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col">
+                        <div class="text-center flex-grow">
+                            <i class="fas fa-soap text-4xl text-blue-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Express Wash</h3>
+                            <p class="text-3xl font-bold text-blue-600 mb-4">$50</p>
+                            <ul class="space-y-3 text-gray-700 text-left"><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Exterior Hand Wash & Dry</li><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Wheel & Tire Cleaning</li><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Tire Shine Application</li><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Window Cleaning (Exterior)</li></ul>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="mt-6 block w-full text-center bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition duration-300">Book Express</a>
+                    </div>
+                    <div class="bg-blue-900 text-white rounded-lg shadow-xl p-8 transform hover:-translate-y-2 transition duration-300 ring-4 ring-blue-500 ring-opacity-50 flex flex-col">
+                        <div class="text-center flex-grow">
+                            <i class="fas fa-star text-4xl text-yellow-400 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Ocean Full Detail</h3>
+                            <p class="text-3xl font-bold text-yellow-400 mb-4">$250</p>
+                            <span class="bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase mb-4 inline-block">Most Popular</span>
+                            <ul class="space-y-3 text-left"><li><i class="fas fa-check-circle text-green-400 mr-2"></i>Includes everything in Express Wash</li><li><i class="fas fa-check-circle text-green-400 mr-2"></i>Deep Interior Vacuum</li><li><i class="fas fa-check-circle text-green-400 mr-2"></i>Shampoo Carpets & Upholstery</li><li><i class="fas fa-check-circle text-green-400 mr-2"></i>Leather Cleaning & Conditioning</li><li><i class="fas fa-check-circle text-green-400 mr-2"></i>Dash & Console Detailing</li><li><i class="fas fa-check-circle text-green-400 mr-2"></i>Clay Bar & Wax Application</li></ul>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="mt-6 block w-full text-center bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">Book Full Detail</a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition duration-300 flex flex-col">
+                        <div class="text-center flex-grow">
+                            <i class="fas fa-shield-alt text-4xl text-blue-500 mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Ceramic Coating</h3>
+                            <p class="text-3xl font-bold text-blue-600 mb-4">$700+</p>
+                            <ul class="space-y-3 text-gray-700 text-left"><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Ultimate Paint Protection (2+ years)</li><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Extreme Gloss & Hydrophobicity</li><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Includes Full Detail Prep</li><li><i class="fas fa-check-circle text-green-500 mr-2"></i>Protects Against Scratches & UV Rays</li></ul>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="mt-6 block w-full text-center bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition duration-300">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
- <section data-aos="fade-up">
-  <h2 style="text-align: center;">Our Work Gallery</h2>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="https://raw.githubusercontent.com/oceanasrat/ocean-auto-detailing/main/gallery_image_1.jpg" alt="Interior Detailing - Ocean Auto Detailing" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://raw.githubusercontent.com/oceanasrat/ocean-auto-detailing/main/gallery_image_2.jpg" alt="Exterior Detail - Ocean Auto Detailing" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://raw.githubusercontent.com/oceanasrat/ocean-auto-detailing/main/gallery_image_3.jpg" alt="Engine Cleaning - Ocean Auto Detailing" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">Our Work</h2>
+                    <p class="text-gray-600 mt-2">See the difference for yourself.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <img src="https://placehold.co/600x400/334155/ffffff?text=Before" alt="Before detailing" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=After" alt="After detailing" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="https://placehold.co/600x400/9ca3af/ffffff?text=Dirty+Interior" alt="Dirty Interior" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="https://placehold.co/600x400/1e40af/ffffff?text=Clean+Interior" alt="Clean Interior" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="https://placehold.co/600x400/475569/ffffff?text=Dull+Paint" alt="Dull Paint" class="rounded-lg shadow-md w-full h-full object-cover">
+                    <img src="https://placehold.co/600x400/0ea5e9/ffffff?text=Glossy+Paint" alt="Glossy Paint" class="rounded-lg shadow-md w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
 
-  <section id="contact" data-aos="fade-up">
-    <section id="quotes" data-aos="fade-up" style="padding: 2rem; background-color: #f8f9fa;">
-  <h2 style="text-align:center;">Sample Customer Quotes</h2>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-gray-100">
+             <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900">What Our Clients Say</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic">"My car has never looked this good, not even when I bought it! The attention to detail is just incredible. Worth every penny."</p>
+                        <div class="flex items-center mt-4">
+                            <img src="https://placehold.co/100x100/e2e8f0/333333?text=J.D." alt="Client 1" class="w-12 h-12 rounded-full mr-4">
+                            <div><h4 class="font-bold">John Doe</h4><p class="text-sm text-gray-500">Sports Car Owner</p></div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-700 italic">"With two kids and a dog, my car's interior was a disaster. The team at Ocean Auto worked miracles. It looks and smells brand new."</p>
+                         <div class="flex items-center mt-4">
+                            <img src="https://placehold.co/100x100/e2e8f0/333333?text=S.R." alt="Client 2" class="w-12 h-12 rounded-full mr-4">
+                            <div><h4 class="font-bold">Sarah Reynolds</h4><p class="text-sm text-gray-500">SUV Owner</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div style="max-width: 800px; margin: auto;">
-    <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #0077b6; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-      <p><strong>Service:</strong> Full Detail (Interior + Exterior)</p>
-      <p><strong>Customer Preference:</strong> Deep seat shampoo, ceramic wax, tire shine</p>
-      <p><strong>Estimated Price:</strong> <span style="color: #0077b6;">$180</span></p>
-      <p><em>“I needed my car to look fresh before a family trip. Ocean Auto Detailing made it shine like new!” – Sarah R., Dallas</em></p>
-    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold">Book Your Appointment</h2>
+                    <p class="text-gray-400 mt-2">Ready for the Ocean Auto Detailing treatment? Click the button below or give us a call!</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Booking Button -->
+                    <div class="text-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="w-full inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition duration-300 transform hover:scale-105">
+                           <i class="fas fa-calendar-check mr-2"></i> Book an Appointment Online
+                        </a>
+                    </div>
+                    <!-- Contact Info & AI Tip -->
+                    <div class="space-y-6">
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-start space-x-4"><i class="fas fa-map-marker-alt text-2xl text-blue-400 mt-1"></i><div><h4 class="text-xl font-bold">Our Location</h4><p class="text-gray-400">8501 holland ave Rowlett, TX 75089</p></div></div>
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-start space-x-4"><i class="fas fa-phone text-2xl text-blue-400 mt-1"></i><div><h4 class="text-xl font-bold">Call Us</h4><p class="text-gray-400">(214) 251-9820</p></div></div>
+                        <!-- Gemini Feature: Car Care Tip -->
+                        <div class="bg-gray-800 p-6 rounded-lg">
+                           <h4 class="text-xl font-bold mb-4 text-center">Pro Car Care Corner</h4>
+                           <div id="car-tip-output" class="p-4 bg-gray-700 rounded-md min-h-[80px] flex items-center justify-center text-center text-gray-300 italic mb-4">
+                               Click the button for a useful car care tip!
+                           </div>
+                           <button id="get-tip-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition flex items-center justify-center space-x-2">
+                               <span>✨ Get a Pro Car Care Tip</span>
+                           </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div style="background: white; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #0077b6; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-      <p><strong>Service:</strong> Interior Cleaning Only</p>
-      <p><strong>Customer Preference:</strong> Pet hair removal, odor elimination, dashboard detailing</p>
-      <p><strong>Estimated Price:</strong> <span style="color: #0077b6;">$120</span></p>
-      <p><em>“I drive with my dog daily. Ocean Auto Detailing removed all the fur and smells—amazing!” – Marcus T., Garland</em></p>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8"><div class="container mx-auto text-center"><p>&copy; 2024 Ocean Auto Detailing. All Rights Reserved.</p></div></footer>
 
-    <div style="background: white; padding: 1.5rem; border-left: 4px solid #0077b6; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
-      <p><strong>Service:</strong> Exterior Wash</p>
-      <p><strong>Customer Preference:</strong> Quick wash with hand wax and tire shine</p>
-      <p><strong>Estimated Price:</strong> <span style="color: #0077b6;">$50</span></p>
-      <p><em>“They came to my office and finished in under an hour. So convenient!” – Jessica M., Rowlett</em></p>
-    </div>
-  </div>
+    <script>
+        // --- Gemini API Call Function ---
+        async function callGemini(prompt) {
+            // PASTE YOUR API KEY IN THE LINE BELOW
+            const apiKey = "AIzaSyDBw-fsZQgDdotbDMFc1sZ2erxBWLh07-E"; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            
+            if (apiKey === "YOUR_API_KEY_GOES_HERE") {
+                const recommendationOutput = document.getElementById('recommendation-output');
+                const carTipOutput = document.getElementById('car-tip-output');
+                const outputElement = recommendationOutput.classList.contains('hidden') ? carTipOutput : recommendationOutput;
 
-  <!-- Get Quote Button -->
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="#contact" style="background-color: #0077b6; color: white; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: bold; border-radius: 5px;">
-      Get a Quote Now
-    </a>
-  </div>
-    </section>
-    <h2>Contact & Booking</h2>
-    <p>Call us: <a href="tel:+12142519820">(214) 251-9820</a></p>
-    <p><a href="https://maps.app.goo.gl/rytnApbJ5U6HFc8L6" target="_blank">View us on Google Maps</a></p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?embedded=true" width="640" height="2961" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  </section>
-<section id="about" data-aos="fade-up">
-  <h2>Why Choose Ocean Auto Detailing?</h2>
-  <p>
-    Ocean Auto Detailing is a trusted mobile detailing service proudly serving Dallas, TX and surrounding areas. 
-    We bring showroom-level cleaning and polishing directly to your driveway, saving you time while delivering unbeatable results.
-  </p>
-  <p>
-    Whether you need a simple exterior wash, interior deep cleaning, or a complete full detail with ceramic coating, 
-    our experienced team uses top-quality products and techniques that restore your vehicle’s appearance to like-new condition. 
-    We specialize in both personal and commercial vehicle care, offering affordable packages for cars, SUVs, and trucks.
-  </p>
-  <p>
-    Book online or call (214) 251-9820 to schedule your mobile detail today. 
-    Experience the shine and protection that keeps Dallas drivers coming back!
-  </p>
-</section>
+                outputElement.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
+                if (outputElement.id === 'recommendation-output') {
+                   outputElement.classList.remove('hidden');
+                }
+                 // Re-enable buttons
+                document.getElementById('get-recommendation-btn').innerHTML = `<span>✨ Get AI Recommendation</span>`;
+                document.getElementById('get-recommendation-btn').disabled = false;
+                document.getElementById('get-tip-btn').innerHTML = `<span>✨ Get a Pro Car Care Tip</span>`;
+                document.getElementById('get-tip-btn').disabled = false;
 
-  <section id="reviews" data-aos="fade-up">
-    <h2>Trusted by Dallas Drivers</h2>
-    <p>Don’t just take our word for it — see what real customers have to say about our mobile detailing services.</p>
-    <div style="padding:20px;">
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-      <div class="elfsight-app-df053726-ed71-47f6-93d5-8035486dc14f" data-elfsight-app-lazy></div>
-    </div>
-  </section>
+                return null;
+            }
 
-  <footer>
-    <p>© 2025 Ocean Auto Detailing | Dallas, TX</p>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: { delay: 3000 },
-      pagination: { el: '.swiper-pagination', clickable: true }
-    });
-  </script>
+            const payload = {
+                contents: [{
+                    role: "user",
+                    parts: [{ text: prompt }]
+                }]
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0) {
+                    return result.candidates[0].content.parts[0].text;
+                }
+                return "Sorry, I couldn't generate a response. Please try again.";
+
+            } catch (error) {
+                console.error("Gemini API call failed:", error);
+                return "An error occurred while contacting our AI advisor. Please check your connection and try again.";
+            }
+        }
+
+        // --- AI Service Recommender ---
+        const getRecommendationBtn = document.getElementById('get-recommendation-btn');
+        const carConditionInput = document.getElementById('car-condition');
+        const recommendationOutput = document.getElementById('recommendation-output');
+
+        getRecommendationBtn.addEventListener('click', async () => {
+            const user_input = carConditionInput.value;
+            if (user_input.trim() === "") {
+                recommendationOutput.innerHTML = `<p class="text-red-500 font-bold">Please describe your car's condition first.</p>`;
+                recommendationOutput.classList.remove('hidden');
+                return;
+            }
+
+            // Show loader
+            getRecommendationBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Analyzing...</span>`;
+            getRecommendationBtn.disabled = true;
+            recommendationOutput.classList.add('hidden');
+
+            const prompt = `
+                You are an expert car detailer for "Ocean Auto Detailing". A customer has described their car's condition. Your job is to recommend one of our three service packages: "Express Wash", "Ocean Full Detail", or "Ceramic Coating".
+
+                Here are the packages:
+                - Express Wash ($50): Exterior Hand Wash & Dry, Wheel & Tire Cleaning, Tire Shine, Exterior Window Cleaning.
+                - Ocean Full Detail ($250): Everything in Express Wash, plus: Deep Interior Vacuum, Shampoo Carpets & Upholstery, Leather Cleaning & Conditioning, Dash & Console Detailing, Clay Bar & Wax Application.
+                - Ceramic Coating ($700+): Everything in Ocean Full Detail, plus: A multi-year protective ceramic layer for ultimate gloss and protection against scratches & UV rays.
+
+                Analyze the user's description and recommend the single best package. Explain your reasoning clearly and concisely in a friendly, professional tone. Structure your response with a clear heading for the recommendation and then the explanation.
+
+                User's car condition: "${user_input}"
+            `;
+
+            const recommendation = await callGemini(prompt);
+            
+            if (recommendation) {
+                // Display result
+                recommendationOutput.innerHTML = recommendation.replace(/\n/g, '<br>'); // Basic formatting
+                recommendationOutput.classList.remove('hidden');
+            }
+            
+            // Hide loader and re-enable button
+            getRecommendationBtn.innerHTML = `<span>✨ Get AI Recommendation</span>`;
+            getRecommendationBtn.disabled = false;
+        });
+
+
+        // --- AI Car Care Tip Generator ---
+        const getTipBtn = document.getElementById('get-tip-btn');
+        const carTipOutput = document.getElementById('car-tip-output');
+        
+        getTipBtn.addEventListener('click', async () => {
+            // Show loader
+            getTipBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Getting Tip...</span>`;
+            getTipBtn.disabled = true;
+            
+            const prompt = `You are an expert car detailer. Provide one unique, practical, and easy-to-follow car care tip for a car owner to do themselves to maintain their vehicle's appearance between professional details. The tip should be concise and no more than 2-3 sentences.`;
+
+            const tip = await callGemini(prompt);
+            
+            if (tip) {
+                carTipOutput.textContent = tip;
+            }
+
+            // Hide loader and re-enable button
+            getTipBtn.innerHTML = `<span>✨ Get a Pro Car Care Tip</span>`;
+            getTipBtn.disabled = false;
+        });
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+    </script>
 </body>
 </html>
