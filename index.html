@@ -42,7 +42,7 @@
                 <h1 class="text-2xl font-bold tracking-tight">Ocean Auto Detailing</h1>
             </a>
             <nav class="hidden md:flex space-x-6">
-                <a href="#recommender" class="hover:text-blue-400 transition duration-300">AI Advisor</a>
+                <a href="#recommender" class="hover:text-blue-400 transition duration-300">AI Quote</a>
                 <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
                 <a href="#gallery" class="hover:text-blue-400 transition duration-300">Gallery</a>
                 <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
@@ -55,7 +55,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
             <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#recommender" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">AI Advisor</a>
+                <a href="#recommender" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">AI Quote</a>
                 <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Services</a>
                 <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Gallery</a>
                 <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Testimonials</a>
@@ -76,18 +76,18 @@
             </div>
         </section>
 
-        <!-- Gemini Feature: Service Recommender -->
+        <!-- Gemini Feature: AI Quote Generator -->
         <section id="recommender" class="py-20 bg-white">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl font-bold text-gray-900">Not Sure What You Need?</h2>
-                <p class="text-gray-600 mt-2 mb-8 max-w-2xl mx-auto">Describe your car's condition and your goals, and let our AI advisor recommend the perfect service for you.</p>
+                <h2 class="text-4xl font-bold text-gray-900">Get an Instant Quote Estimate</h2>
+                <p class="text-gray-600 mt-2 mb-8 max-w-2xl mx-auto">Describe your car's condition and what you want done. Our AI will analyze your needs and provide a personalized price estimate.</p>
                 <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
                     <div class="mb-4">
                         <label for="car-condition" class="block text-left text-lg font-medium text-gray-800 mb-2">Describe your car's situation:</label>
-                        <textarea id="car-condition" rows="4" class="w-full p-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 'My SUV is full of dog hair and the paint looks dull. I want it to look great for a family road trip.'"></textarea>
+                        <textarea id="car-condition" rows="4" class="w-full p-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 'My black Honda Civic has a lot of swirl marks in the paint and the headlights are foggy. The inside is pretty clean though. Can I get a quote to make the outside look new again?'"></textarea>
                     </div>
                     <button id="get-recommendation-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center space-x-2">
-                        <span>✨ Get AI Recommendation</span>
+                        <span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>
                     </button>
                     <div id="recommendation-output" class="mt-6 text-left p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500 hidden">
                         <!-- AI content will be injected here -->
@@ -165,19 +165,19 @@
                     <div class="bg-white p-6 rounded-lg shadow-lg">
                         <p class="text-gray-700 italic">"Ocean did a really great job detailing the interior of my car for a reasonable price. Very kind and friendly, highly recommend.."</p>
                         <div class="flex items-center mt-4">
-                            <img src="https://placehold.co/100x100/e2e8f0/333333?text=J.D." alt="Client 1" class="w-12 h-12 rounded-full mr-4">
-                            <div><h4 class="font-bold">Portia Holliness</h4><p class="text-sm text-gray-500">Sports Car Owner</p></div>
+                            <img src="https://placehold.co/100x100/e2e8f0/333333?text=P.H." alt="Client 1" class="w-12 h-12 rounded-full mr-4">
+                            <div><h4 class="font-bold">Portia Holliness</h4><p class="text-sm text-gray-500">Satisfied Customer</p></div>
                         </div>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-lg">
                         <p class="text-gray-700 italic">"Ocean Auto Detailing showed up on time, worked really hard, and did a great job. They were also very friendly.."</p>
                          <div class="flex items-center mt-4">
-                            <img src="https://placehold.co/100x100/e2e8f0/333333?text=S.R." alt="Client 2" class="w-12 h-12 rounded-full mr-4">
-                            <div><h4 class="font-bold">Wendy Duprey</h4><p class="text-sm text-gray-500">SUV Owner</p></div>
+                            <img src="https://placehold.co/100x100/e2e8f0/333333?text=W.D." alt="Client 2" class="w-12 h-12 rounded-full mr-4">
+                            <div><h4 class="font-bold">Wendy Duprey</h4><p class="text-sm text-gray-500">Happy Customer</p></div>
                         </div>
                     </div>
                 </div>
-           <div class="text-center mt-12">
+                <div class="text-center mt-12">
                     <a href="https://www.google.com/search?q=ocean+auto+detailing+tx+reviews" target="_blank" rel="noopener noreferrer" class="inline-block bg-white hover:bg-gray-200 text-gray-800 font-bold py-3 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105 shadow-lg border border-gray-300">
                         <i class="fab fa-google mr-2"></i> Read More Reviews on Google
                     </a>
@@ -223,13 +223,13 @@
     <footer class="bg-gray-900 text-gray-400 py-8"><div class="container mx-auto text-center"><p>&copy; 2024 Ocean Auto Detailing. All Rights Reserved.</p></div></footer>
 
     <script>
-        Gemini API Call Function ---
+        // --- Gemini API Call Function ---
         async function callGemini(prompt) {
             // PASTE YOUR NEW, SECURE API KEY HERE
-            const apiKey = "AIzaSyCfYV48VdzlzzYWpwNSGBOPmjuVUEV58MQ"; 
+            const apiKey = "YOUR_API_KEY_GOES_HERE"; 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             
-            if (apiKey === "YOUR_API_KEY_GOES_HERE") {
+            if (apiKey === "YOUR_API_KEY_GOES_HERE" || apiKey === "") {
                 const recommendationOutput = document.getElementById('recommendation-output');
                 const carTipOutput = document.getElementById('car-tip-output');
                 const outputElement = recommendationOutput.classList.contains('hidden') ? carTipOutput : recommendationOutput;
@@ -355,7 +355,7 @@
             getTipBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Getting Tip...</span>`;
             getTipBtn.disabled = true;
             
-            const prompt = \`You are an expert car detailer. Provide one unique, practical, and easy-to-follow car care tip for a car owner to do themselves to maintain their vehicle's appearance between professional details. The tip should be concise and no more than 2-3 sentences.\`;
+            const prompt = "You are an expert car detailer. Provide one unique, practical, and easy-to-follow car care tip for a car owner to do themselves to maintain their vehicle's appearance between professional details. The tip should be concise and no more than 2-3 sentences.";
 
             const tip = await callGemini(prompt);
             
@@ -364,7 +364,7 @@
             }
 
             // Hide loader and re-enable button
-            getTipBtn.innerHTML = \`<span>✨ Get a Pro Car Care Tip</span>\`;
+            getTipBtn.innerHTML = "<span>✨ Get a Pro Car Care Tip</span>";
             getTipBtn.disabled = false;
         });
 
@@ -374,6 +374,7 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        
     </script>
 </body>
 </html>
