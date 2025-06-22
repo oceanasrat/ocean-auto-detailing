@@ -42,7 +42,8 @@
                 <h1 class="text-2xl font-bold tracking-tight">Ocean Auto Detailing</h1>
             </a>
             <nav class="hidden md:flex space-x-6">
-                <a href="#recommender" class="hover:text-blue-400 transition duration-300">AI Quote</a>
+                <a href="#advisor" class="hover:text-blue-400 transition duration-300">AI Advisor</a>
+                <a href="#quoter" class="hover:text-blue-400 transition duration-300">AI Quote</a>
                 <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
                 <a href="#gallery" class="hover:text-blue-400 transition duration-300">Gallery</a>
                 <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
@@ -55,7 +56,8 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
             <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#recommender" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">AI Quote</a>
+                <a href="#advisor" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">AI Advisor</a>
+                <a href="#quoter" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">AI Quote</a>
                 <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Services</a>
                 <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Gallery</a>
                 <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Testimonials</a>
@@ -76,20 +78,40 @@
             </div>
         </section>
 
+        <!-- Gemini Feature: AI Service Advisor -->
+        <section id="advisor" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold text-gray-900">Not Sure What You Need?</h2>
+                <p class="text-gray-600 mt-2 mb-8 max-w-2xl mx-auto">Describe your car's condition and your goals, and let our AI advisor recommend the perfect service for you.</p>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label for="advisor-condition" class="block text-left text-lg font-medium text-gray-800 mb-2">Describe your car's situation:</label>
+                        <textarea id="advisor-condition" rows="4" class="w-full p-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 'My SUV is full of dog hair and the paint looks dull. I want it to look great for a family road trip.'"></textarea>
+                    </div>
+                    <button id="get-advisor-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center space-x-2">
+                        <span>✨ Get AI Recommendation</span>
+                    </button>
+                    <div id="advisor-output" class="mt-6 text-left p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500 hidden">
+                        <!-- AI content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Gemini Feature: AI Quote Generator -->
-        <section id="recommender" class="py-20 bg-white">
+        <section id="quoter" class="py-20 bg-white">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-4xl font-bold text-gray-900">Get an Instant Quote Estimate</h2>
                 <p class="text-gray-600 mt-2 mb-8 max-w-2xl mx-auto">Describe your car's condition and what you want done. Our AI will analyze your needs and provide a personalized price estimate.</p>
                 <div class="max-w-2xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
                     <div class="mb-4">
-                        <label for="car-condition" class="block text-left text-lg font-medium text-gray-800 mb-2">Describe your car's situation:</label>
-                        <textarea id="car-condition" rows="4" class="w-full p-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 'My black Honda Civic has a lot of swirl marks in the paint and the headlights are foggy. The inside is pretty clean though. Can I get a quote to make the outside look new again?'"></textarea>
+                        <label for="quoter-condition" class="block text-left text-lg font-medium text-gray-800 mb-2">Describe your car's situation:</label>
+                        <textarea id="quoter-condition" rows="4" class="w-full p-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 'My black Honda Civic has a lot of swirl marks in the paint and the headlights are foggy. The inside is pretty clean though. Can I get a quote to make the outside look new again?'"></textarea>
                     </div>
-                    <button id="get-recommendation-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center space-x-2">
+                    <button id="get-quoter-btn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center space-x-2">
                         <span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>
                     </button>
-                    <div id="recommendation-output" class="mt-6 text-left p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500 hidden">
+                    <div id="quoter-output" class="mt-6 text-left p-6 bg-blue-50 rounded-lg border-l-4 border-blue-500 hidden">
                         <!-- AI content will be injected here -->
                     </div>
                 </div>
@@ -230,17 +252,27 @@
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             
             if (apiKey === "YOUR_API_KEY_GOES_HERE" || apiKey === "") {
-                const recommendationOutput = document.getElementById('recommendation-output');
+                const advisorOutput = document.getElementById('advisor-output');
+                const quoterOutput = document.getElementById('quoter-output');
                 const carTipOutput = document.getElementById('car-tip-output');
-                const outputElement = recommendationOutput.classList.contains('hidden') ? carTipOutput : recommendationOutput;
 
-                outputElement.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
-                if (outputElement.id === 'recommendation-output') {
-                   outputElement.classList.remove('hidden');
+                // Determine which output is currently active
+                let activeOutput = null;
+                if (!advisorOutput.classList.contains('hidden')) {
+                    activeOutput = advisorOutput;
+                } else if (!quoterOutput.classList.contains('hidden')) {
+                    activeOutput = quoterOutput;
+                } else {
+                    activeOutput = carTipOutput; // Default to tip if others are hidden
                 }
-                 // Re-enable buttons
-                document.getElementById('get-recommendation-btn').innerHTML = `<span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>`;
-                document.getElementById('get-recommendation-btn').disabled = false;
+
+                activeOutput.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
+                
+                 // Re-enable all buttons
+                document.getElementById('get-advisor-btn').innerHTML = `<span>✨ Get AI Recommendation</span>`;
+                document.getElementById('get-advisor-btn').disabled = false;
+                document.getElementById('get-quoter-btn').innerHTML = `<span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>`;
+                document.getElementById('get-quoter-btn').disabled = false;
                 document.getElementById('get-tip-btn').innerHTML = `<span>✨ Get a Pro Car Care Tip</span>`;
                 document.getElementById('get-tip-btn').disabled = false;
 
@@ -279,23 +311,65 @@
             }
         }
 
-        // --- AI Quote Generator ---
-        const getRecommendationBtn = document.getElementById('get-recommendation-btn');
-        const carConditionInput = document.getElementById('car-condition');
-        const recommendationOutput = document.getElementById('recommendation-output');
+        // --- AI Service Advisor ---
+        const getAdvisorBtn = document.getElementById('get-advisor-btn');
+        const advisorConditionInput = document.getElementById('advisor-condition');
+        const advisorOutput = document.getElementById('advisor-output');
 
-        getRecommendationBtn.addEventListener('click', async () => {
-            const user_input = carConditionInput.value;
+        getAdvisorBtn.addEventListener('click', async () => {
+            const user_input = advisorConditionInput.value;
             if (user_input.trim() === "") {
-                recommendationOutput.innerHTML = `<p class="text-red-500 font-bold">Please describe your car's condition first.</p>`;
-                recommendationOutput.classList.remove('hidden');
+                advisorOutput.innerHTML = `<p class="text-red-500 font-bold">Please describe your car's condition first.</p>`;
+                advisorOutput.classList.remove('hidden');
                 return;
             }
 
             // Show loader
-            getRecommendationBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Calculating...</span>`;
-            getRecommendationBtn.disabled = true;
-            recommendationOutput.classList.add('hidden');
+            getAdvisorBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Analyzing...</span>`;
+            getAdvisorBtn.disabled = true;
+            advisorOutput.classList.add('hidden');
+
+            const prompt = `
+                You are an expert car detailer for "Ocean Auto Detailing". A customer has described their car's condition. Your job is to recommend one of our three service packages: "Express Wash", "Ocean Full Detail", or "Ceramic Coating".
+
+                Here are the packages:
+                - Express Wash ($50): Exterior Hand Wash & Dry, Wheel & Tire Cleaning, Tire Shine, Exterior Window Cleaning.
+                - Ocean Full Detail ($250): Everything in Express Wash, plus: Deep Interior Vacuum, Shampoo Carpets & Upholstery, Leather Cleaning & Conditioning, Dash & Console Detailing, Clay Bar & Wax Application.
+                - Ceramic Coating ($700+): Everything in Ocean Full Detail, plus: A multi-year protective ceramic layer for ultimate gloss and protection against scratches & UV rays.
+
+                Analyze the user's description and recommend the single best package. Explain your reasoning clearly and concisely in a friendly, professional tone. Structure your response with a clear heading for the recommendation and then the explanation.
+
+                User's car condition: "${user_input}"
+            `;
+
+            const recommendation = await callGemini(prompt);
+            
+            if (recommendation) {
+                advisorOutput.innerHTML = recommendation.replace(/\n/g, '<br>');
+                advisorOutput.classList.remove('hidden');
+            }
+            
+            getAdvisorBtn.innerHTML = `<span>✨ Get AI Recommendation</span>`;
+            getAdvisorBtn.disabled = false;
+        });
+
+        // --- AI Quote Generator ---
+        const getQuoterBtn = document.getElementById('get-quoter-btn');
+        const quoterConditionInput = document.getElementById('quoter-condition');
+        const quoterOutput = document.getElementById('quoter-output');
+
+        getQuoterBtn.addEventListener('click', async () => {
+            const user_input = quoterConditionInput.value;
+            if (user_input.trim() === "") {
+                quoterOutput.innerHTML = `<p class="text-red-500 font-bold">Please describe your car's condition first.</p>`;
+                quoterOutput.classList.remove('hidden');
+                return;
+            }
+
+            // Show loader
+            getQuoterBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Calculating...</span>`;
+            getQuoterBtn.disabled = true;
+            quoterOutput.classList.add('hidden');
 
             const prompt = `
                 You are an expert AI quote generator for a business called "Ocean Auto Detailing".
@@ -328,21 +402,19 @@
                 **User's car condition:** "${user_input}"
             `;
 
-            const recommendation = await callGemini(prompt);
+            const quote = await callGemini(prompt);
             
-            if (recommendation) {
-                // Display result
+            if (quote) {
                 // Use a regex to make the Total line bold for better visibility
-                let formattedRecommendation = recommendation.replace(/\n/g, '<br>');
-                formattedRecommendation = formattedRecommendation.replace(/(Estimated Total:|Total Estimate:|Total:)/gi, '<strong>$1</strong>');
+                let formattedQuote = quote.replace(/\n/g, '<br>');
+                formattedQuote = formattedQuote.replace(/(Estimated Total:|Total Estimate:|Total:)/gi, '<strong>$1</strong>');
                 
-                recommendationOutput.innerHTML = formattedRecommendation;
-                recommendationOutput.classList.remove('hidden');
+                quoterOutput.innerHTML = formattedQuote;
+                quoterOutput.classList.remove('hidden');
             }
             
-            // Hide loader and re-enable button
-            getRecommendationBtn.innerHTML = `<span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>`;
-            getRecommendationBtn.disabled = false;
+            getQuoterBtn.innerHTML = `<span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>`;
+            getQuoterBtn.disabled = false;
         });
 
 
