@@ -256,17 +256,14 @@
                 const quoterOutput = document.getElementById('quoter-output');
                 const carTipOutput = document.getElementById('car-tip-output');
 
-                // Determine which output is currently active
-                let activeOutput = null;
+                // This logic correctly finds which button was pressed and displays the error in the right place.
                 if (!advisorOutput.classList.contains('hidden')) {
-                    activeOutput = advisorOutput;
+                    advisorOutput.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
                 } else if (!quoterOutput.classList.contains('hidden')) {
-                    activeOutput = quoterOutput;
+                     quoterOutput.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
                 } else {
-                    activeOutput = carTipOutput; // Default to tip if others are hidden
+                    carTipOutput.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
                 }
-
-                activeOutput.innerHTML = `<p class="text-red-500 font-bold">API Key Needed:</p><p>Please add your Google AI API key to the script to enable this feature.</p>`;
                 
                  // Re-enable all buttons
                 document.getElementById('get-advisor-btn').innerHTML = `<span>✨ Get AI Recommendation</span>`;
