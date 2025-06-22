@@ -223,7 +223,7 @@
     <footer class="bg-gray-900 text-gray-400 py-8"><div class="container mx-auto text-center"><p>&copy; 2024 Ocean Auto Detailing. All Rights Reserved.</p></div></footer>
 
     <script>
-        // --- Gemini API Call Function ---
+        Gemini API Call Function ---
         async function callGemini(prompt) {
             // PASTE YOUR NEW, SECURE API KEY HERE
             const apiKey = "AIzaSyCfYV48VdzlzzYWpwNSGBOPmjuVUEV58MQ"; 
@@ -239,7 +239,7 @@
                    outputElement.classList.remove('hidden');
                 }
                  // Re-enable buttons
-                document.getElementById('get-recommendation-btn').innerHTML = `<span>✨ Get AI Recommendation</span>`;
+                document.getElementById('get-recommendation-btn').innerHTML = `<span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>`;
                 document.getElementById('get-recommendation-btn').disabled = false;
                 document.getElementById('get-tip-btn').innerHTML = `<span>✨ Get a Pro Car Care Tip</span>`;
                 document.getElementById('get-tip-btn').disabled = false;
@@ -279,7 +279,7 @@
             }
         }
 
-        // --- AI Service Recommender ---
+        // --- AI Quote Generator ---
         const getRecommendationBtn = document.getElementById('get-recommendation-btn');
         const carConditionInput = document.getElementById('car-condition');
         const recommendationOutput = document.getElementById('recommendation-output');
@@ -293,33 +293,55 @@
             }
 
             // Show loader
-            getRecommendationBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Analyzing...</span>`;
+            getRecommendationBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Calculating...</span>`;
             getRecommendationBtn.disabled = true;
             recommendationOutput.classList.add('hidden');
 
             const prompt = `
-                You are an expert car detailer for "Ocean Auto Detailing". A customer has described their car's condition. Your job is to recommend one of our three service packages: "Express Wash", "Ocean Full Detail", or "Ceramic Coating".
+                You are an expert AI quote generator for a business called "Ocean Auto Detailing".
+                Your task is to analyze a customer's description of their car's condition and provide an itemized, estimated quote.
 
-                Here are the packages:
-                - Express Wash ($50): Exterior Hand Wash & Dry, Wheel & Tire Cleaning, Tire Shine, Exterior Window Cleaning.
-                - Ocean Full Detail ($250): Everything in Express Wash, plus: Deep Interior Vacuum, Shampoo Carpets & Upholstery, Leather Cleaning & Conditioning, Dash & Console Detailing, Clay Bar & Wax Application.
-                - Ceramic Coating ($700+): Everything in Ocean Full Detail, plus: A multi-year protective ceramic layer for ultimate gloss and protection against scratches & UV rays.
+                Follow these steps:
+                1.  Read the user's description carefully.
+                2.  Identify which services are needed based on the keywords in the description.
+                3.  Use the internal price list below to build the quote.
+                4.  Present the response as an itemized list with a clear total at the end.
+                5.  Add a friendly disclaimer that this is an estimate and the final price will be confirmed after an in-person inspection.
 
-                Analyze the user's description and recommend the single best package. Explain your reasoning clearly and concisely in a friendly, professional tone. Structure your response with a clear heading for the recommendation and then the explanation.
+                **Internal Price List:**
+                * **Base - Exterior Detail (Wash, Clay Bar, Wax):** $150
+                * **Base - Interior Detail (Vacuum, Wipe down, Windows):** $150
+                * **Add-on - Heavy Pet Hair / Sand Removal:** +$75
+                * **Add-on - Seat & Carpet Shampoo:** +$100
+                * **Add-on - Leather Cleaning & Conditioning:** +$75
+                * **Add-on - Paint Correction (for light swirl marks, adds significant gloss):** +$250
+                * **Add-on - Headlight Restoration (for foggy/yellow headlights):** +$80
 
-                User's car condition: "${user_input}"
+                **Example Logic:**
+                * If user mentions "dog hair" or "sand", add the "Heavy Pet Hair / Sand Removal" fee.
+                * If user mentions "swirl marks", "scratches", or "dull paint", add the "Paint Correction" fee and the "Exterior Detail" base price.
+                * If user mentions "dirty interior", "stains", or "spills", add the "Interior Detail" base price. If they mention stains specifically, also add "Seat & Carpet Shampoo".
+
+                **Output Format:**
+                Start with a friendly opening. Then list each service with its price. End with the total and the disclaimer.
+
+                **User's car condition:** "${user_input}"
             `;
 
             const recommendation = await callGemini(prompt);
             
             if (recommendation) {
                 // Display result
-                recommendationOutput.innerHTML = recommendation.replace(/\n/g, '<br>'); // Basic formatting
+                // Use a regex to make the Total line bold for better visibility
+                let formattedRecommendation = recommendation.replace(/\n/g, '<br>');
+                formattedRecommendation = formattedRecommendation.replace(/(Estimated Total:|Total Estimate:|Total:)/gi, '<strong>$1</strong>');
+                
+                recommendationOutput.innerHTML = formattedRecommendation;
                 recommendationOutput.classList.remove('hidden');
             }
             
             // Hide loader and re-enable button
-            getRecommendationBtn.innerHTML = `<span>✨ Get AI Recommendation</span>`;
+            getRecommendationBtn.innerHTML = `<span><i class="fas fa-calculator mr-2"></i> Get My Quote Estimate</span>`;
             getRecommendationBtn.disabled = false;
         });
 
@@ -333,7 +355,7 @@
             getTipBtn.innerHTML = `<div class="loader"></div> <span class="ml-2">Getting Tip...</span>`;
             getTipBtn.disabled = true;
             
-            const prompt = `You are an expert car detailer. Provide one unique, practical, and easy-to-follow car care tip for a car owner to do themselves to maintain their vehicle's appearance between professional details. The tip should be concise and no more than 2-3 sentences.`;
+            const prompt = \`You are an expert car detailer. Provide one unique, practical, and easy-to-follow car care tip for a car owner to do themselves to maintain their vehicle's appearance between professional details. The tip should be concise and no more than 2-3 sentences.\`;
 
             const tip = await callGemini(prompt);
             
@@ -342,7 +364,7 @@
             }
 
             // Hide loader and re-enable button
-            getTipBtn.innerHTML = `<span>✨ Get a Pro Car Care Tip</span>`;
+            getTipBtn.innerHTML = \`<span>✨ Get a Pro Car Care Tip</span>\`;
             getTipBtn.disabled = false;
         });
 
@@ -352,7 +374,6 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-        
     </script>
 </body>
 </html>
