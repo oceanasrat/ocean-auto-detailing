@@ -224,12 +224,61 @@
                     <p class="text-gray-400 mt-2">Ready for the Ocean Auto Detailing treatment? Click the button below or give us a call!</p>
                 </div>
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Booking Button -->
-                    <div class="text-center">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuEBshI2veqohBU3KU9w6RJG9jcKZnQIKmZi5SUcsKnqPW9A/viewform?usp=header" target="_blank" class="w-full inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition duration-300 transform hover:scale-105">
-                           <i class="fas fa-calendar-check mr-2"></i> Book an Appointment Online
-                        </a>
-                    </div>
+                    <!-- Booking Form (Replaces Booking Button) -->
+<div class="bg-gray-800 p-6 rounded-lg text-left">
+    <h3 class="text-2xl font-bold text-white mb-4 text-center">Book an Appointment</h3>
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Name*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+        <input type="email" name="email" placeholder="Email*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+        <input type="tel" name="phone" placeholder="Phone*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+
+        <select name="vehicle" required class="w-full p-3 mb-4 rounded text-gray-900">
+            <option value="">-- Select Vehicle Type* --</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Truck</option>
+            <option>Coupe</option>
+            <option>Convertible</option>
+            <option>Van / Minivan</option>
+            <option>Hatchback</option>
+            <option>Motorcycle</option>
+            <option>Other (see notes)</option>
+        </select>
+
+        <label class="block text-white font-semibold mb-1">Services Needed* (Select multiple)</label>
+        <select name="services[]" multiple required class="w-full p-3 mb-4 rounded text-gray-900 h-32">
+            <option>Exterior Wash</option>
+            <option>Interior Detailing</option>
+            <option>Full Detail</option>
+            <option>Clay Bar Treatment</option>
+            <option>Engine Bay Cleaning</option>
+            <option>Headlight Polishing</option>
+            <option>Paint Polishing</option>
+            <option>Ceramic Coating</option>
+            <option>Steam Cleaning</option>
+            <option>Seat Shampooing</option>
+            <option>Wheel & Tire Cleaning</option>
+            <option>Pet Hair Removal</option>
+            <option>Other (see notes)</option>
+        </select>
+
+        <input type="datetime-local" name="datetime" required class="w-full p-3 mb-4 rounded text-gray-900" />
+        <input type="text" name="location" placeholder="Location*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+        <textarea name="notes" placeholder="Additional Notes" rows="3" class="w-full p-3 mb-4 rounded text-gray-900"></textarea>
+
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded transition">
+            <i class="fas fa-paper-plane mr-2"></i> Submit Booking
+        </button>
+    </form>
+</div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    // Submit logic or backend integration would go here
+    window.location.href = 'thank-you.html'; // Redirect to thank-you page
+  }
+</script>
                     <!-- Contact Info & AI Tip -->
                     <div class="space-y-6">
                         <div class="bg-gray-800 p-6 rounded-lg flex items-start space-x-4"><i class="fas fa-map-marker-alt text-2xl text-blue-400 mt-1"></i><div><h4 class="text-xl font-bold">Our Location</h4><p class="text-gray-400">8501 holland ave Rowlett, TX 75089</p></div></div>
