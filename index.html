@@ -224,55 +224,58 @@
                     <p class="text-gray-400 mt-2">Ready for the Ocean Auto Detailing treatment? Click the button below or give us a call!</p>
                 </div>
                 <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Booking Form (Replaces Booking Button) -->
+       <!-- Booking Form -->
 <div class="bg-gray-800 p-6 rounded-lg text-left">
-    <h3 class="text-2xl font-bold text-white mb-4 text-center">Book an Appointment</h3>
-    <form onsubmit="handleSubmit(event)">
-        <input type="text" name="name" placeholder="Name*" required class="w-full p-3 mb-4 rounded text-gray-900" />
-        <input type="email" name="email" placeholder="Email*" required class="w-full p-3 mb-4 rounded text-gray-900" />
-        <input type="tel" name="phone" placeholder="Phone*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+  <h3 class="text-2xl font-bold text-white mb-4 text-center">Book an Appointment</h3>
+  <form action="https://formspree.io/f/myzjrvww" method="POST">
+    <input type="text" name="name" placeholder="Name*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+    <input type="email" name="email" placeholder="Email*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+    <input type="tel" name="phone" placeholder="Phone*" required class="w-full p-3 mb-4 rounded text-gray-900" />
 
-        <select name="vehicle" required class="w-full p-3 mb-4 rounded text-gray-900">
-            <option value="">-- Select Vehicle Type* --</option>
-            <option>Sedan</option>
-            <option>SUV</option>
-            <option>Truck</option>
-            <option>Coupe</option>
-            <option>Convertible</option>
-            <option>Van / Minivan</option>
-            <option>Hatchback</option>
-            <option>Motorcycle</option>
-            <option>Other (see notes)</option>
-        </select>
+    <select name="vehicle" required class="w-full p-3 mb-4 rounded text-gray-900">
+      <option value="">-- Select Vehicle Type* --</option>
+      <option>Sedan</option>
+      <option>SUV</option>
+      <option>Truck</option>
+      <option>Coupe</option>
+      <option>Convertible</option>
+      <option>Van / Minivan</option>
+      <option>Hatchback</option>
+      <option>Motorcycle</option>
+      <option>Other (see notes)</option>
+    </select>
 
-        <label class="block text-white font-semibold mb-1">Services Needed* (Select multiple)</label>
-        <select name="services[]" multiple required class="w-full p-3 mb-4 rounded text-gray-900 h-32">
-            <option>Exterior Wash</option>
-            <option>Interior Detailing</option>
-            <option>Full Detail</option>
-            <option>Clay Bar Treatment</option>
-            <option>Engine Bay Cleaning</option>
-            <option>Headlight Polishing</option>
-            <option>Paint Polishing</option>
-            <option>Ceramic Coating</option>
-            <option>Steam Cleaning</option>
-            <option>Seat Shampooing</option>
-            <option>Wheel & Tire Cleaning</option>
-            <option>Pet Hair Removal</option>
-            <option>Other (see notes)</option>
-        </select>
+    <label class="block text-white font-semibold mb-1">Services Needed* (Select multiple)</label>
+    <select name="services[]" multiple required class="w-full p-3 mb-4 rounded text-gray-900 h-32">
+      <option>Exterior Wash</option>
+      <option>Interior Detailing</option>
+      <option>Full Detail</option>
+      <option>Clay Bar Treatment</option>
+      <option>Engine Bay Cleaning</option>
+      <option>Headlight Polishing</option>
+      <option>Paint Polishing</option>
+      <option>Ceramic Coating</option>
+      <option>Steam Cleaning</option>
+      <option>Seat Shampooing</option>
+      <option>Wheel & Tire Cleaning</option>
+      <option>Pet Hair Removal</option>
+      <option>Other (see notes)</option>
+    </select>
 
-        <input type="datetime-local" name="datetime" required class="w-full p-3 mb-4 rounded text-gray-900" />
-        <input type="text" name="location" placeholder="Location*" required class="w-full p-3 mb-4 rounded text-gray-900" />
-        <textarea name="notes" placeholder="Additional Notes" rows="3" class="w-full p-3 mb-4 rounded text-gray-900"></textarea>
+    <input type="datetime-local" name="datetime" required class="w-full p-3 mb-4 rounded text-gray-900" />
+    <input type="text" name="location" placeholder="Location*" required class="w-full p-3 mb-4 rounded text-gray-900" />
+    <textarea name="notes" placeholder="Additional Notes" rows="3" class="w-full p-3 mb-4 rounded text-gray-900"></textarea>
 
-        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded transition">
-            <i class="fas fa-paper-plane mr-2"></i> Submit Booking
-        </button>
-    </form>
+    <!-- Hidden Fields -->
+    <input type="hidden" name="_subject" value="New Booking from Ocean Auto Detailing" />
+    <input type="hidden" name="_autoresponse" value="Thanks for booking with Ocean Auto Detailing! We’ll contact you soon to confirm your appointment." />
+    <input type="hidden" name="_redirect" value="https://oceanautodetailingtx.com/thank-you.html" />
+
+    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded transition">
+      <i class="fas fa-paper-plane mr-2"></i> Submit Booking
+    </button>
+  </form>
 </div>
-
-<script>
   function handleSubmit(e) {
     e.preventDefault();
     // Submit logic or backend integration would go here
@@ -438,12 +441,12 @@
                 5.  Add a friendly disclaimer that this is an estimate and the final price will be confirmed after an in-person inspection.
 
                 **Internal Price List:**
-                * **Base - Exterior Detail (Wash, Clay Bar, Wax):** $150
-                * **Base - Interior Detail (Vacuum, Wipe down, Windows):** $150
-                * **Add-on - Heavy Pet Hair / Sand Removal:** +$75
+                * **Base - Exterior Detail (Wash, Clay Bar, Wax):** $100
+                * **Base - Interior Detail (Vacuum, Wipe down, Windows):** $100
+                * **Add-on - Heavy Pet Hair / Sand Removal:** +$65
                 * **Add-on - Seat & Carpet Shampoo:** +$100
-                * **Add-on - Leather Cleaning & Conditioning:** +$75
-                * **Add-on - Paint Correction (for light swirl marks, adds significant gloss):** +$250
+                * **Add-on - Leather Cleaning & Conditioning:** +$65
+                * **Add-on - Paint Correction (for light swirl marks, adds significant gloss):** +$200
                 * **Add-on - Headlight Restoration (for foggy/yellow headlights):** +$80
 
                 **Example Logic:**
